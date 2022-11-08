@@ -4,14 +4,18 @@ const ul = document.querySelector('ul');
 let inputs;
 let allList;
 
+//getting all close imgages by class name
 let close = document.getElementsByClassName("close");
 let i;
+//adding onmouseover event to the first close image
 close[0].onmouseover = function () {
     close[0].src = './images/close_hovered.png';
 }
 close[0].onmouseout = function () {
     close[0].src = './images/close.png';
 }
+
+//changes that happens when "Add task" button is clicked
 btn.addEventListener('click', event => {
     let newItem = document.createElement('li');
     let input = document.createElement('input');
@@ -76,6 +80,8 @@ sortIcon.addEventListener('mouseout', event => {
         event.target.src = './images/desc.png';
     }
 });
+
+//sorting the inputs
 sortIcon.addEventListener('click', event => {
     let newInputs = [];
     if (event.target.alt == 'asc') {
